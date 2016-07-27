@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3lodingAnimation</title>
+	<style>
+  		.box{
+			width: 100%;
+			padding: 3%;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.box .loader{
+			width: 30%;
+			height:200px;
+			float: left;
+			margin-right: 3%;
+			border:1px solid #ccc;
+			box-sizing: border-box;
+			display: -webkit-flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.type1{
+			width: 50px;
+			height: 50px;
+			position: relative;
+		}
+		.type1 span{
+			width: 100%;
+			height: 100%;
+			display: block;
+			border-radius: 50%;
+			background: linear-gradient(transparent 0%,transparent 70%,#333 30%,#333 100%);
+			-webkit-animation: type1 0.6s linear 0s infinite; 
+			animation: type1 1s linear 0s infinite; 
+		}
+		@-webkit-keyframes type1{
+			0%{transform: rotate(0deg);}
+			50%{transform: rotate(180deg);}
+			100%{transform: rotate(360deg);}
+		}
+		@keyframes type1{
+			0%{transform: rotate(0deg);}
+			50%{transform: rotate(180deg);}
+			100%{transform: rotate(360deg);}
+		}
+
+
+
+
+
+
+
+		.type2 span{
+			display: inline-block;
+			width: 8px;
+			height: 50px;
+			border-radius: 2px;
+			margin: 0 2px;
+			background-color: #333;
+		}
+		.type2 span:nth-child(1){
+			animation: type2 1s ease-in 0.1s infinite;
+		}
+		.type2 span:nth-child(2){
+			animation: type2 1s ease-in 0.2s infinite;
+		}
+		.type2 span:nth-child(3){
+			animation: type2 1s ease-in 0.3s infinite;
+		}
+		.type2 span:nth-child(4){
+			animation: type2 1s ease-in 0.4s infinite;
+		}
+		.type2 span:nth-child(5){
+			animation: type2 1s ease-in 0.5s infinite;
+		}
+		@keyframes type2{
+			0%{transform: scaleY(1);}
+			50%{transform: scaleY(.4);}
+			100%{transform: scaleY(1);}
+		}
+		@-webkit-keyframes type2{
+			0%{transform: scaleY(1);}
+			50%{transform: scaleY(.4);}
+			100%{transform: scaleY(1);}
+		}
+		
+
+
+
+
+		.type3{
+			position: relative;
+		}
+		.type3 span{
+			display: block;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: #333;
+			position: absolute;
+		}
+		.type3 span:nth-child(1){
+			top:25px;
+			left: 0;
+			-webkit-animation:type3 1s ease 0s infinite;
+			animation: type3 1s ease 0s infinite;
+		}
+		.type3 span:nth-child(2){
+			top:17px;
+			left:17px;
+			-webkit-animation:type3 1s ease -0.12s infinite;
+			animation: type3 1s ease -0.12s infinite;
+		}
+		.type3 span:nth-child(3){
+			top:0;
+			left: 25px;
+			-webkit-animation:type3 1s ease -0.24s infinite;
+			animation: type3 1s ease -0.24s infinite;
+		}
+		.type3 span:nth-child(4){
+			top:-17px;
+			left:17px;
+			-webkit-animation:type3 1s ease -0.36s infinite;
+			animation: type3 1s ease -0.36s infinite;
+		}
+		.type3 span:nth-child(5){
+			top:-25px;
+			left:0;
+			-webkit-animation:type3 1s ease -0.48s infinite;
+			animation: type3 1s ease -0.48s infinite;
+		}
+		.type3 span:nth-child(6){
+			top:-17px;
+			left:-17px;
+			-webkit-animation:type3 1s ease -0.6s infinite;
+			animation: type3 1s ease -0.6s infinite;
+		}
+		.type3 span:nth-child(7){
+			top:0;
+			left:-25px;
+			-webkit-animation:type3 1s ease -0.72s infinite;
+			animation: type3 1s ease -0.72s infinite;
+		}
+		.type3 span:nth-child(8){
+			top:17px;
+			left:-17px;
+			-webkit-animation:type3 1s ease -0.84s infinite;
+			animation: type3 1s ease -0.84s infinite;
+		}
+		@keyframes type3{
+			50%{
+				transform:scale(0.4);
+				opacity: .3;
+			}
+			100%{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+		@-webkit-keyframes type3{
+			50%{
+				transform: scale(0.4);
+				opacity: .3;
+			}
+			100%{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+
+    .type4{
+		width: 60px;
+		height:60px;
+		position: relative;
+	}
+	.type4 span{
+		display: block;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: #ccc;
+		position: absolute;
+		left: 0;top:0;
+		opacity: 0;
+	}
+	.type4 span:nth-child(1){
+		animation: type4 1s linear 0s infinite;
+		-webkit-animation: type4 1s linear 0s infinite;
+	}
+	.type4 span:nth-child(2){
+		animation: type4 1s linear 0.2s infinite;
+		-webkit-animation: type4 1s linear 0.2s infinite;
+	}
+	.type4 span:nth-child(3){
+		animation: type4 1s linear 0.4s infinite;
+		-webkit-animation: type4 1s linear 0.4s infinite;
+	}
+	@keyframes type4{
+		0%{
+			transform: scale(0);
+			opacity: 0;
+		}
+		5%{
+			opacity: 1;
+		}
+		100%{
+			transform: scale(1);
+			opacity: 0;
+		}
+	}
+	@-webkit-keyframes type4{
+		0%{
+			transform: scale(0);
+			opacity: 0;
+		}
+		5%{
+			opacity: 1;
+		}
+		100%{
+			transform: scale(1);
+			opacity: 0;
+		}
+	}
+
+		.type5{
+		width: 40px;
+		height: 40px;
+		position: relative;
+	}
+	.type5 span{
+		display: block;
+		border: 2px solid #333;
+		border-color: transparent #333;
+		border-radius: 50%;
+		position: absolute;
+	}
+	.type5 span:nth-child(1){
+		width: 35px;
+		height: 35px;
+		top: 0;
+		left: 0;
+		animation: type5 1s ease-in-out 0s infinite;
+		-webkit-animation: type5 1s ease-in-out 0s infinite;
+	}
+	.type5 span:nth-child(2){
+		width: 15px;
+		height: 15px;
+		top: 10px;
+		left: 10px;
+		animation: type5 1s ease-in-out 0.5s infinite reverse;
+		-webkit-animation: type5 1s ease-in-out 0.5s infinite reverse;
+	}
+	@keyframes type5{
+		0%{
+			transform: rotate(0deg) scale(1);
+		}
+		50%{
+			transform: rotate(720deg) scale(.6);
+		}
+		100%{
+			transform: rotate(360deg) scale(1);
+		}
+	}
+	@-webkit-keyframes type5{
+		0%{
+			transform: rotate(0deg) scale(1);
+		}
+		50%{
+			transform: rotate(180deg) scale(.6);
+		}
+		100%{
+			transform: rotate(360deg) scale(1);
+		}
+	}
+  	.type6 {
+		width: 80px;
+		height: 20px;
+		position:relative;
+	}
+	.type6 span{
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		margin-right: 10px;
+		background-color: #333;
+		position: absolute;
+	}
+	.type6 span:nth-child(1){
+		animation: type6 2s linear 0s infinite;
+		-webkit-animation: type6 2s linear 0s infinite;
+	}
+	.type6 span:nth-child(2){
+		animation: type6 2s linear -0.4s infinite;
+		-webkit-animation: type6 2s linear -0.4s infinite;
+	}
+	.type6 span:nth-child(3){
+		animation: type6 2s linear -0.8s infinite;
+		-webkit-animation: type6 2s linear -0.8s infinite;
+	}
+	.type6 span:nth-child(4){
+		animation: type6 2s linear -1.2s infinite;
+		-webkit-animation: type6 2s linear -1.2s infinite;
+	}
+	.type6 span:nth-child(5){
+		animation: type6 2s linear -1.6s infinite;
+		-webkit-animation: type6 2s linear -1.6s infinite;
+	}
+	@keyframes type6{
+		0%{
+			left:100px;
+			top: 0;
+		}
+		80%{
+			left:0;
+			top: 0;
+		}
+		85%{
+			left:0;
+			top:-20px;
+			width: 20px;
+			height: 20px;
+		}
+		90%{
+			width: 40px;
+			height: 20px;
+		}
+		95%{
+			left: 100px;
+			top: -20px;
+			width: 20px;
+			height: 20px;
+		}
+		100%{
+			left:100px;
+			top: 0;
+		}
+	}
+	@-webkit-keyframes type6{
+		0%{
+			left:100px;
+			top: 0px;
+		}
+		80%{
+			left:0px;
+			top: 0px;
+		}
+		85%{
+			left:0px;
+			top:-20px;
+			width: 20px;
+			height: 20px;
+		}
+		90%{
+			width: 40px;
+			height: 20px;
+		}
+		95%{
+			left: 100px;
+			top: 20px;
+			width: 20px;
+			height: 20px;
+		}
+		100%{
+			left:100px;
+			top: 0px;
+		}
+	}
+	.nav{
+		width: 1200px;
+		margin: 50px auto;
+		display: -webkit-flex;
+	}
+	.nav:after{
+		content: '';
+		display: block;
+		clear: both;
+		overflow: hidden;
+	}
+	.nav .item{
+		flex:1;
+		height: 100px;
+		margin-right: 20px;
+		float:left;
+		perspective: 4000px;
+	}
+	.nav .item a{
+		display: block;
+		height: 100px;
+		text-decoration: none;
+		transition: all .5s;
+		transform-style: preserve-3d;
+	} 
+	.nav .item a p{
+		height: 100px;
+		margin:0;
+		line-height: 100px;
+		color: #fff;
+		text-align: center;
+		font-size: 20px;
+		font-family: 'microsoft yahei';
+		border-radius: 2px;
+		transition: all .5s;
+	}
+	.nav .item a p:first-child{
+		background-color: #090;
+		transform: translateZ(50px);
+	}
+	.nav .item a p:last-child{
+		background-color: #009;
+		transform: translateZ(50px) rotateX(-90deg);
+		margin-top: -50px;
+	}
+	.nav .item a:hover{
+		transform: rotateX(90deg);
+	}
+	.nav .item a:hover p:last-child{
+		margin-top:0;
+		transform: translateZ(0) rotateX(-90deg);
+	}
+	</style>
+</head>
+<body>
+ 	<header class="nav">
+ 		<div class="item">
+ 			<a href="#">
+ 				<p>首页</p>
+ 				<p>Home</p>
+ 			</a>
+ 		</div>
+ 		<div class="item">
+ 			<a href="#">
+ 				<p>问答</p>
+ 				<p>Q&amp;A</p>
+ 			</a>
+ 		</div>
+ 		<div class="item">
+ 			<a href="#">
+ 				<p>关于我们</p>
+ 				<p>About</p>
+ 			</a>
+ 		</div>
+ 		<div class="item">
+ 			<a href="#">
+ 				<p>联系我们</p>
+ 				<p>Contact</p>
+ 			</a>
+ 		</div>
+ 		<div class="item">
+ 			<a href="#">
+ 				<p>其他</p>
+ 				<p>Other</p>
+ 			</a>
+ 		</div>
+ 	</header>
+  	<section class="box">
+		<div class="loader">
+			<div class="type1">
+				<span></span>
+			</div>
+		</div>
+		<div class="loader">
+			<div class="type2">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="loader">
+			<div class="type3">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</section>
+		<section class="box">
+		<div class="loader">
+			<div class="type4">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="loader">
+			<div class="type5">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="loader">
+			<div class="type6">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>		
+		</div>
+	</section>
+</body>
+</html>
